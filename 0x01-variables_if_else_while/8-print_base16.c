@@ -8,9 +8,11 @@
 
 int main(void)
 {
-for (int num = 0; num < 10; num++)
+int num;
+char alph;
+for (num = 0; num < 10; num++)
 putchar(num + '0');
-for (char alph = 'a'; alph <= 'f'; alph++)
+for (alph = 'a'; alph <= 'f'; alph++)
 putchar(alph);
 
 putchar('\n');
