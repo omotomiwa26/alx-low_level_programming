@@ -1,7 +1,9 @@
 #include <stdio.h>
 
  /**
- * main - Entry point
+ * main - program to solve combination of two digits
+ *
+ * Description: combination of two digits
  *
  * Return: Always 0 (Success)
  */
@@ -24,6 +26,6 @@ putchar(' ');
 }
 }
 }
-putchar('\n');
+/**putchar('\n');*/
 return (0);
 }
