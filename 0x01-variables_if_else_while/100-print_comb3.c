@@ -1,12 +1,12 @@
 #include <stdio.h>
 
- /**
- * main - program to solve combination of two digits
- *
- * Description: combination of two digits
- *
- * Return: Always 0 (Success)
- */
+/**
+* main - program to solve combination of two digits
+*
+* Description: combination of two digits
+*
+* Return: Always 0 (Success)
+*/
 
 int main(void)
 {
