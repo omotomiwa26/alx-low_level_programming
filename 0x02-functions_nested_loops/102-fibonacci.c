@@ -19,7 +19,7 @@ int main(void)
 			printf(", %ld", fib2);
 		else
 		{
-			fib1 += fib2;
+			fib2 += fib1;
 			fib1 = fib2 - fib1;
 			printf(", %ld", fib2);
 		}
