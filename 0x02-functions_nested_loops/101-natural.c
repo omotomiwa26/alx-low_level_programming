@@ -16,7 +16,7 @@ int main(void)
 			sum += multiple;
 		}
 
-		mumtiple++;
+		multiple++;
 	}
 
 	printf("%d\n", sum);
