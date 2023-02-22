@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "main.h"
 /**
 *print_alphabet_x10 - Entry point
 *
@@ -9,7 +9,7 @@ void print_alphabet_x10(void)
 {
 int i = 1;
 char alphabet;
-while (i < = 10)
+while (i <= 10)
 {
 alphabet = 'a';
 while (alphabet <= 'z')
