@@ -20,7 +20,7 @@ int main(void)
 		else
 		{
 			fib1 += fib2;
-			fib2 = fib1 - fib2;
+			fib1 = fib2 - fib1;
 			printf(", %ld", fib2);
 		}
 
