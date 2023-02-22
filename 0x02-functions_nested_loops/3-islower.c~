@@ -1,0 +1,21 @@
+#include "main.h"
+/**
+*_islower - Entry point
+*
+*Return: 1 if true;  otherwise 0.
+*/
+
+int _islower(int c)
+{
+int i = 'a';
+
+for (i = 'a'; i <= 'z'; i++)
+{
+/*call function*/
+if (c == i)
+{
+return (1);
+}
+}
+return (0);
+}
