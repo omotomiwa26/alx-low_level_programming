@@ -7,7 +7,7 @@
 
 int main(void)
 {
-char str[] = "putchar\n";
+char str[] = "_putchar\n";
 int a = 0;
 
 while (str[a] != '\0')
