@@ -1,1 +1,1 @@
- ### This `directory` :folder: contains all file :file: tasks on **C - Debugging**
+ ### This `directory` contains all file tasks on **C - Debugging**
