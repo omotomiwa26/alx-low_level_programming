@@ -2,7 +2,7 @@
 
 /**
  * print_numbers - program prints 0 to 9
- * except 3 and 4
+ * except 2 and 4
  *
  * Return: void
  */
@@ -13,7 +13,7 @@ char z;
 
 for (z = 0; z <= 9; z++)
 {
-if (z != 3 && z != 4)
+if (z != 2 && z != 4)
 {
 _putchar(z + '0');
 }
