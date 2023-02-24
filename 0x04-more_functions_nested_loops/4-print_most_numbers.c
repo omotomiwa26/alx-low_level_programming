@@ -13,13 +13,10 @@ char z;
 
 for (z = 0; z <= 9; z++)
 {
-if (z != 2 && z != 4)
-{
+if (z == 2 || z == 4)
+continue;
 _putchar(z + '0');
 }
-else
-{
-}
-}
+
 _putchar('\n')
 }
