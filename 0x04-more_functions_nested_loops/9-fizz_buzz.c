@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * main - program output Fizz Buzz code
+ * main - program outputs Fizz Buzz
  *
  * Return: void
  */
@@ -28,11 +28,12 @@ int main(void)
 		{
 			printf("%i", i);
 		}
+		if (i != 100)
 		{
-putchar(' ');
+			putchar(' ');
 		}
 
 	}
-putchar('\n');
-return (0);
+	putchar('\n');
+	return (0);
 }
