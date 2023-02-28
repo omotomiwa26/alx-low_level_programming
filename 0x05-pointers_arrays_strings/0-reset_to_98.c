@@ -1,18 +1,14 @@
-#include "man.h"
+#include "main.h"
 
-/** 
-* main - reset_to_98
-* Description: program updates the value of a pointer
-*
+/**
+* reset_to_98 - program updates the value of a pointer
+* @n: takes the parameter
 * Return: Always 0 (Success)
 */
 
-void reset_to_98(void)
+void reset_to_98(int *n)
 {
-int n;
-int *p;
-  
-n = 98;
-p = &n;
+
+*n = 98;
 
 }
