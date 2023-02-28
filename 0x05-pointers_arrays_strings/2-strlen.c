@@ -1,5 +1,5 @@
 #include "main.h"
-#include <stdio.h>
+
 
 /**
  * _strlen - checks the length of a string
@@ -11,8 +11,7 @@
 int _strlen(char *s)
 {
 	int length = 0;
-
-	length = _strlen(s);
-	printf("%d\n", length);
-	return (0);
+	while (s[length])
+	length++;
+	return (length);
 }
