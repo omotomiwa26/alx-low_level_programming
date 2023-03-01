@@ -28,6 +28,7 @@ int main(void)
 			putchar(y + '0');
 			break;
 		}
-	return (0);
+
 	}
+	return (0);
 }
