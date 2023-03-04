@@ -7,18 +7,21 @@
  * Return:pointer to the encoded string.
  */
 
-char *leet(char *)
+char *leet(char *str)
 {
-char chk [] = "aAeEoOtTlL"
-char chng [] = "43071"
-int i, j;
+int i;
 for (i = 0; str[i] != '\0'; i++)
 {
-for (j = 0; chk[j] != '\0'; j++)
-{    
-if (str[i] == chk[j])
-str[i] == chng[j];
-}
+if (str[i] == 'a' || str[i] == 'A')
+str[i] = '4';
+else if (str[i] == 'e' || str[i] == 'E')
+str[i] = '3';
+else if (str[i] == 'o' || str[i] == 'O')
+str[i] = '0';
+else if (str[i] == 't' || str[i] == 'T')
+str[i] = '7';
+else if (str[i] == 'l' || str[i] == 'L')
+str[i] = '1';
 }
 return (0);
 }
