@@ -16,7 +16,7 @@ int a, b;
 
 for (a = 0; dest[a] != '\n'; a++)
 ;
-for (b = 0; b <= (n-1); b++)
+for (b = 0; b <= (n - 1); b++)
 {
 dest[a] = src[b];
 a++;
