@@ -1,18 +1,18 @@
 #include "main.h"
 
 /**
- * string_toupper - lower case to upper case
- * @z: pointer char variable
+ * string_toupper - lowercase to uppercase
+ * @str: pointer char variable
  *
- * Return:upper case string
+ * Return: uppercase string
  */
 
-char *string_toupper(char *z)
+char *string_toupper(char *str)
 {
 int a;
 
-for (a = 0; z[a] != '\0'; a++)
-z[a] = z[a] - 32;
+for (a = 0; str[a] != '\0'; a++)
+str[a] = str[a] - 32;
 
 return (0);
 }
