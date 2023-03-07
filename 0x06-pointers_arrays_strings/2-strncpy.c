@@ -14,10 +14,6 @@ char *_strncpy(char *dest, char *src, int n)
 {
 int a, b;
 
-char *_strncpy(char *dest, char *src, int n)
-{
-int a, b;
-
 for (a = 0; dest[a] != '\0'; a++)
 ;
 for (b = 0; b <= (n - 1); b++)
