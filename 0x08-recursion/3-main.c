@@ -19,3 +19,4 @@ int main(void)
     r = factorial(-1024);
     printf("%d\n", r);
     return (0);
+}
