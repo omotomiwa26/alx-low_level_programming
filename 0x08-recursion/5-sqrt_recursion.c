@@ -12,11 +12,9 @@
 
 int sqrt_recur(int i, int m)
 {
-if (m == 1)
-return (1);
-else if (i  == m / 2)
+if (i == m / 2)
 return (-1);
-else if (i * i == m)
+else if ((i * i) == m)
 return (i);
 return (sqrt_recur(i + 1, m));
 }
@@ -31,5 +29,10 @@ return (sqrt_recur(i + 1, m));
 
 int  _sqrt_recursion(int n)
 {
+int m = 0;
+if (m == 1)
+return (1);
+else if (n < 0)
+return (-1);
 return (sqrt_recur(1, n));
 }
