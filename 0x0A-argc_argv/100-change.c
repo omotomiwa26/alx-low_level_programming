@@ -1,70 +1,51 @@
 #include "main.h"
 
 /**
- * coinConv - function that coverts the coin
- * @x: Passed variable from main for conversion
- * Return: Number of min coin needed
- */
-int coinConv(int x)
-{
-int c = 0;
-
-while (x != 0)
-{
-if (x % 10 == 9 || x % 10 == 7)
-x -= 2;
-else if (x % 25 == 0)
-x -= 25;
-else if (x % 10 == 0)
-x -= 10;
-else if (x % 5 == 0)
-x -= 5;
-else if (x % 2 == 0)
-{
-if (x % 10 == 6)
-x -= 1;
-else
-x -= 2;
-}
-else
-x -= 1;
-
-c++;
-}
-
-return (c);
-}
-
-/**
- * main - only one argument for minimum coin count
- * @argc: Number of command line arguments
- * @argv: Array strings
- * Return: 0 if only 1 argument is passed
- * Else: 1
+ * main - prints minumum number of coin as amount
+ * @argc: number of cammand line arguments
+ * @argv: array strings
+ * Return: always return 0
  */
 int main(int argc, char *argv[])
 {
-	int a, cn;
+	int amount, coin;
 
-	cn = 0;
-
+	coin = 0;
 	if (argc != 2)
 	{
 		printf("Error\n");
 		return (1);
 	}
-
-	a = atoi(argv[1]);
-
-	if (a < 0)
-		printf("0\n");
-
-	else
+	amount = atoi(argv[1]);
+	if (amount < 0)
 	{
-		cn = coinConv(a);
-
-		printf("%d\n", cn);
+		printf("%d\n", 0);
+		return (0);
 	}
-
+	if (amount % 25 >= 0)
+	{
+		coin += amount / 25;
+		amount = amount % 25;
+	}
+	if (amount % 10 >= 0)
+	{
+		coin += amount / 10;
+		amount = amount % 10;
+	}
+	if (amount % 5 >= 0)
+	{
+		coin += amount / 5;
+		amount = amount % 5;
+	}
+	if (amount % 2 >= 0)
+	{
+		coin += amount / 2;
+		amount = amount % 2;
+	}
+	if (amount % 1 >= 0)
+	{
+		coin += amount / 1;
+	}
+	printf("%d\n", coin);
 	return (0);
 }
