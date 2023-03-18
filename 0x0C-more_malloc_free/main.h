@@ -1,6 +1,7 @@
 #ifndef MAIN_H
 #define MAIN_H
 
+#define ERR_MSG "Error"
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
