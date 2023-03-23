@@ -31,10 +31,8 @@ exit(2);
 
 arr = (char *)main;
 
-a = 0;
-while (a < bytes)
+for (a = 0; a < bytes; a++)
 {
-a++;
 if (a == bytes - 1)
 {
 printf("%02hhx\n", arr[a]);
