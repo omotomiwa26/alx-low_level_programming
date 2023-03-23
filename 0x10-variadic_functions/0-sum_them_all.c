@@ -20,6 +20,6 @@ for (x = 0; x < n; x++)
 
 sum += va_arg(ap, int);
 va_end(ap);
- 
+
 return (sum);
 }
