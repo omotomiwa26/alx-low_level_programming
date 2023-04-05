@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * loop_linked_list_int_length - Counts the number of unique nodes
+ * loop_linked_list_int_length - function counts the number of unique nodes
  * while looping a linked list listint_t.
  * @head: A pointer to the head of the linkedlist listint_t to check.
  *
@@ -51,7 +51,8 @@ return (0);
 
 
 /**
- * print_listint_safe - function prints a linkedlist listint_t list safely.
+ * print_listint_safe - function prints a linkedlist 
+ * listint_t list(safe version).
  * @head: A pointer to the head of linkedlist listint_t list.
  *
  * Return: The number of nodes in the list.
