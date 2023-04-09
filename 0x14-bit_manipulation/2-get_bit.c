@@ -14,7 +14,7 @@ int bit_ind;
 
 if (index > 63)
 return (-1);
-     
-bit_ind = (n >> index) & 1; 
+
+bit_ind = (n >> index) & 1;
 return (bit_ind);
 }
