@@ -14,6 +14,8 @@ int length = strlen(b);
 unsigned int int_result = 0;
 int z;
 
+if (!b)
+return (0);
 for (z = 0; z < length; z++)
 {
 if (b[z] == '1')
