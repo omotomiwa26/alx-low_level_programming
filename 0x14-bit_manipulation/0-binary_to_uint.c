@@ -5,27 +5,22 @@
  * @b: pointer to string of char
  *
  * Return: return the converted value to standard output
- * Else: Null
+ * Else: 0 - if b is not 0 or 1
  */
 
 unsigned int binary_to_uint(const char *b)
 {
-int length = strlen(b);
-unsigned int int_result = 0, z = 1;
+unsigned int int_result = 0, z;
 
 	if (!b)
 		return (0);
 
-	for (length = 0; b[length];)
-		length++;
-
-	for (length -= 1; length >= 0; length--)
+	for (z = 0; b[z] != '\0'; z++)
 	{
-		if (b[length] != '0' && b[length] != '1')
+		if (b[z] < '0' || b[z] > '1')
 			return (0);
 
-		int_result += (b[length] - '0') * z;
-		z *= 2;
+		int_result = 2 * int_result + (b[z] - '0');
 	}
 
 	return (int_result);
