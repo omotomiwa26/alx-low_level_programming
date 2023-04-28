@@ -10,30 +10,30 @@
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-FILE *fp;
-ssize_t bytes_read = 0;
-char *buffer = malloc(letters * sizeof(char));
-if (buffer == NULL)
-{
-perror("malloc");
-return (0);
-}
 
-fp = fopen(filename, "r");
-if (fp == NULL)
-{
-perror("fopen");
-free(buffer);
-return (0);
-}
+	ssize_t file, r, w;
+	char *text;
 
-while ((bytes_read = fread(buffer, sizeof(char), letters, fp)) > 0)
-{
-fwrite(buffer, sizeof(char), bytes_read, stdout);
-}
+	text = malloc(letters);
+	if (text == NULL)
+		return (0);
 
-fclose(fp);
-free(buffer);
+	if (filename == NULL)
+		return (0);
 
-return (bytes_read);
+	file = open(filename, O_RDONLY);
+
+	if (file == -1)
+	{
+		free(text);
+		return (0);
+	}
+
+	r = read(file, text, letters);
+
+	w = write(STDOUT_FILENO, text, r);
+
+	close(file);
+
+	return (w);
 }
