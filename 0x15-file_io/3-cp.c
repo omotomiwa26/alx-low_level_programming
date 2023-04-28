@@ -1,4 +1,4 @@
-
+#include "main.h"
 /**
  * file_check - function checks if files can be opened
  * @file_from: file to check from
@@ -54,7 +54,7 @@ int main(int argc, char *argv[])
 		if (nos_chars == -1)
 			file_check(-1, 0, argv);
 
-		nos_read = write(file_to, buf, nchars);
+		nos_read = write(file_to, buf, nos_chars);
 		if (nos_read == -1)
 			file_check(0, -1, argv);
 	}
