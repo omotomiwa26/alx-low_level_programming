@@ -1,75 +1,61 @@
 #include "main.h"
 
 /**
- * file_check - function checks if files can be opened
- * @file_from: file to copy from
- * @file_to: file to copy to
- * @argv: pointer to arguments vector
- * Return: 0 - if success
- * Else: exit 
- */
-
-void file_check(int file_from, int file_to, char *argv[])
-{
-	if (file_from == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-		exit(98);
-	}
-	if (file_to == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", argv[2]);
-		exit(99);
-	}
-}
-
-/**
- * main - program copies content
- * from one file to another
- * @argc: number of arguments constant passed
- * @argv: pointer to arguments vector array
- * Return: Always 0
+ * main - program copies contents
+ * of one file to another
+ * @argc: arguments contents of file
+ * @argv: pointer to array arguments vector of file
+ * Return: file copied
  */
 
 int main(int argc, char *argv[])
 {
-	int file_from, file_to, error_close;
-	ssize_t nos_chars, nos_read;
+	int file_from, file_to, num_1 = 1024, num_2 = 0;
 	char buf[1024];
 
 	if (argc != 3)
 	{
-		dprintf(STDERR_FILENO, "%s\n", "Usage: cp file_from file_to");
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
-	}
-
-	file_from = open(argv[1], O_RDONLY);
-	file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC | O_APPEND, 0664);
-	file_check(file_from, file_to, argv);
-
-	nos_chars = 1024;
-	while (nos_chars == 1024)
-	{
-		nos_chars = read(file_from, buf, 1024);
-		if (nos_chars == -1)
-			file_check(-1, 0, argv);
-
-		nos_read = write(file_to, buf, nos_chars);
-		if (nos_read == -1)
-			file_check(0, -1, argv);
-	}
-	error_close = close(file_from);
-	if (error_close == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_from);
-		exit(100);
-	}
-
-	error_close = close(file_to);
-	if (error_close == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_from);
-		exit(100);
+		file_from = open(argv[1], O_RDONLY);
+		if (file_from == -1)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+			exit(98);
+		}
+		file_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, S_IRUSR | S_IWUSR
+				| S_IRGRP | S_IWGRP | S_IROTH);
+		if (file_to == -1)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+			close(file_from);
+			exit(99);
+		}
+		while (num_1 == 1024)
+		{
+			num_1 = read(file_from, buf, 1024);
+			if (num_1 == -1)
+			{
+				dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+				exit(98);
+			}
+			num_2 = write(file_to, buf, num_1);
+			if (num_2 < num_1)
+			{
+				dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+				exit(99);
+			}
+			if (close(file_from) == -1)
+			{
+				dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_from);
+				exit(100);
+			}
+			if (close(file_to) == -1)
+			{
+				dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_to);
+				exit(100);
+			}
+		}
 	}
 	return (0);
 }
