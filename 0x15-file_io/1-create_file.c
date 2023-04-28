@@ -10,8 +10,7 @@
 
 int create_file(const char *filename, char *text_content)
 {
-
-FILE *fp;
+	int a = 0, file_create;
 
 	if (filename == NULL)
 		return (-1);
@@ -20,14 +19,17 @@ FILE *fp;
 		text_content = "";
 
 
-
-	fp = fopen(filename, "w");
+	while (text_content[a] != '\0')
 	{
-	if (fp == NULL)
-		return (-1);
+		a++;
 	}
-	fprintf(fp, "%s", text_content);
-	fclose(fp);
+
+	file_create = open(filename, O_CREAT | O_WRONLY | O_TRUNC, 0600);
+
+	if (file_create == -1)
+		return (-1);
+
+	write(file_create, text_content, a);
 
 	return (1);
 }
