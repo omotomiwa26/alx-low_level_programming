@@ -1,4 +1,4 @@
-#include "main.h" 
+#include "main.h"
 
 /**
  * check_elf - Checks if a file is an ELF file.
