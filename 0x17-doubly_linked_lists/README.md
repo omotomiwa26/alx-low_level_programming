@@ -1,1 +1,1 @@
-# This directory contains the tasks for 0x17. C - C - Doubly linked lists  📁
+# This directory contains the tasks for 0x17. C - Doubly linked lists  📁
