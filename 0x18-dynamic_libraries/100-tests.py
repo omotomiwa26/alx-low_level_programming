@@ -1,9 +1,8 @@
-from random import randint
-from ctypes import CDLL
+import random, ctypes
 
-cops = ctypes('./100-operations.so')
-a = random(-111, 111)
-b = random(-111, 111)
+cops = ctypes.CDLL('./100-operations.so')
+a = random.randint(-111, 111)
+b = random.randint(-111, 111)
 print("{} + {} = {}".format(a, b, cops.add(a, b)))
 print("{} - {} = {}".format(a, b, cops.sub(a, b)))
 print("{} x {} = {}".format(a, b, cops.mul(a, b)))
