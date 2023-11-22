@@ -1,0 +1,6 @@
+COMPILE = gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -g
+
+FILES = main.c school.c 
+
+all:
+	$(COMPILE) $(FILES) -o school
